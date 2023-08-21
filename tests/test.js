@@ -1,4 +1,3 @@
-const { test } = require('node:test');
 const fizzbuzz = require('../fizzbuzz');
 
 // test('Sanity check', () => {
@@ -28,4 +27,16 @@ test("#fizzyBuzzy returns 'buzz' if number is divisible by 5", () => {
 })
 test("#fizzyBuzzy returns 'fizzbuzz' if number is divisible by 3 and 5", () => {
   expect(fizzbuzz.fizzyBuzzy(30)).toBe("fizzbuzz");
+})
+test("#fizzBuzz object displays correct count", () => {
+  expect(fizzbuzz.fizzBuzz(15).count).toBe(15);
+})
+test("#fizzBuzz object displays correct fizz count", () => {
+  expect(fizzbuzz.fizzBuzz(15).fizz).toBe(4);
+})
+test("#fizzBuzz object displays correct buzz count", () => {
+  expect(fizzbuzz.fizzBuzz(15).buzz).toBe(2);
+})
+test("#fizzBuzz object displays correct fizzBuzz count", () => {
+  expect(fizzbuzz.fizzBuzz(30).fizzBuzz).toBe(2);
 })
