@@ -44,11 +44,34 @@ function fizzBuzz(count) {
   return result
 }
 
+function customFizzBuzz(count, multipleA, stringA, multipleB, stringB) {
+  let result = { count };
+
+  for (let i = 1; i <= count; i++) {
+    let str = '';
+
+    if (i % multipleA === 0) {
+      str += stringA;
+    }
+    else if (i % multipleB === 0) {
+      str += stringB;
+    }
+    else if (str === '') {
+      str = i.toString();
+    }
+
+    result[str] = (result[str] || 0) + 1;
+  }
+
+  return result;
+}
+
 module.exports = {
   isFizz,
   isBuzz,
   isFizzBuzz,
   fizzBuzz,
+  customFizzBuzz,
   FIZZ,
   BUZZ,
   FIZZBUZZ
